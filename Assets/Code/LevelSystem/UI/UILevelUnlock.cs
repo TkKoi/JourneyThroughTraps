@@ -1,18 +1,18 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace TombOfTheMaskClone
+namespace JourneyThroughTraps
 {
     public class UILevelUnlock : MonoBehaviour
     {
         private const string LevelKeyPrefix = "Level_";
-        [SerializeField] private Button levelButton; // Одна кнопка для управления
-        [SerializeField] private int currentButtonID = 0; // ID текущей кнопки
+        [SerializeField] private Button levelButton;
+        [SerializeField] private int currentButtonID = 0; // ID of the current button
         [SerializeField] Image lockImage;
 
         private void UnlockLevel(int levelID)
         {
-            // Разблокировка уровня, если он еще не разблокирован
+            // Unlocking a level if it is not already unlocked
             if (PlayerPrefs.GetInt(LevelKeyPrefix + levelID, 0) == 0)
             {
                 PlayerPrefs.SetInt(LevelKeyPrefix + levelID, 1);

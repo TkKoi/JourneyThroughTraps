@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7d466e2e62aada439773692b363049c, type: 3}
   m_Name: Character_1
   m_EditorClassIdentifier: 
-  icon: {fileID: 4723107735738678597, guid: bbf0d7a17c448244285d0de9023fe3a9, type: 3}
+  icon: {fileID: 1651679453, guid: dea299d8bfc04de4d91ca300e69721f9, type: 3}
   price: 150

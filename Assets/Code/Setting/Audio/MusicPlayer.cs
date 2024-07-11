@@ -38,6 +38,6 @@ public class MusicPlayer : MonoBehaviour
 
         audioSource.clip = clips[currentClipIndex];
         audioSource.Play();
-        currentClipIndex = (currentClipIndex + 1) % clips.Length; // �������� ������ �� ����������� ����������
+        currentClipIndex = (currentClipIndex + 1) % clips.Length;
     }
 }

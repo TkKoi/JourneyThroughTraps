@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace TombOfTheMaskClone
+namespace JourneyThroughTraps
 {
     [RequireComponent(typeof(Health))]
     public class PlayerDead : MonoBehaviour

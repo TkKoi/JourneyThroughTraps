@@ -1,13 +1,13 @@
 using UnityEngine;
 
-namespace TombOfTheMaskClone
+namespace JourneyThroughTraps
 {
     public class LevelManager : MonoBehaviour
     {
         [Header("Character Spawn Setting")]
         [SerializeField] ShopDatabase _shopDatabase;
         [SerializeField] Transform _playerSpawnPosition; // Position where the player's spaceship will spawn
-
+        private const string shopSkinKey = "SelectedSkinIndex";
 
         private void Awake()
         {
@@ -20,11 +20,11 @@ namespace TombOfTheMaskClone
             if (_shopDatabase != null && _shopDatabase.player != null && _shopDatabase.player.Length > PlayerPrefs.GetInt("SelectedShipIndex"))
             {
                 // Instantiate the player's spaceship at the spawn position based on the selected ship index
-                Instantiate(_shopDatabase.player[PlayerPrefs.GetInt("SelectedShipIndex")], _playerSpawnPosition.position, Quaternion.identity);
+                Instantiate(_shopDatabase.player[PlayerPrefs.GetInt(shopSkinKey)], _playerSpawnPosition.position, Quaternion.identity);
             }
             else
             {
-                Debug.LogError("SpaceshipDatabase or _spaceShip array is not properly initialized.");
+                Debug.LogError("ShopDB or _Player array is not properly initialized.");
             }
         }
     }

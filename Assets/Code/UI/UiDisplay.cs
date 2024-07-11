@@ -1,15 +1,15 @@
 using UnityEngine;
 using DG.Tweening;
 
-namespace TombOfTheMaskClone
+namespace JourneyThroughTraps
 {
-    public class DialogBox : MonoBehaviour
+    public class UIDisplay : MonoBehaviour
     {
         [SerializeField] private bool appearInstantly = false;
         [SerializeField] private float animationSpeed;
         [SerializeField] private Ease openEase = Ease.OutBack;
         [SerializeField] private Ease closeEase = Ease.OutQuart;
-        [SerializeField] private DialogBox previousDialog, nextDialog;
+        [SerializeField] private UIDisplay previousDialog, nextDialog;
 
         private void Awake()
         {
@@ -18,7 +18,6 @@ namespace TombOfTheMaskClone
 
         public virtual void Open()
         {
-            // SoundPlayer.Instance.PlaySound("Click");
             gameObject.SetActive(true);
 
             if (appearInstantly)

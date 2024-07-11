@@ -2,9 +2,9 @@ using UnityEngine;
 using DG.Tweening;
 
 
-namespace TombOfTheMaskClone
+namespace JourneyThroughTraps
 {
-    public class UILevelList : DialogBox
+    public class UILevelList : UIDisplay
     {
         [SerializeField] CanvasGroup _background;
         [SerializeField] float _fadeTime;
@@ -28,7 +28,7 @@ namespace TombOfTheMaskClone
             {
                 _background.gameObject.SetActive(false);
                 Time.timeScale = 1;
-            }); // Fade до 0 за 0.5 секунды, игнорируя Time.timeScale, после чего выполнить закрытие
+            }); // Fade to 0 in 0.5 seconds, ignoring Time.timeScale, then close
         }
     }
 }

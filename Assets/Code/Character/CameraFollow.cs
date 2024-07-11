@@ -1,9 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using Cinemachine;
 using UnityEngine;
 
-namespace TombOfTheMaskClone
+namespace JourneyThroughTraps
 {
     [RequireComponent(typeof(CinemachineVirtualCamera))]
     public class CameraFollow : MonoBehaviour

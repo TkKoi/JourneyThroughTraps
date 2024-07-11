@@ -1,10 +1,11 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace TombOfTheMaskClone
+namespace JourneyThroughTraps
 {
     public class UIShopData : MonoBehaviour
     {
+        private const string shopSkinKey = "SelectedSkinIndex";
         [Header("Data")]
         [SerializeField] public ShopData[] _shopData; // Array of shop data
         private int _currentSelectionIndex = 0; // Index of the currently selected skin
@@ -17,7 +18,7 @@ namespace TombOfTheMaskClone
         /// </summary>
         public void Initialize()
         {
-            _currentSelectionIndex = PlayerPrefs.GetInt("SelectedShipIndex", 0);
+            _currentSelectionIndex = PlayerPrefs.GetInt(shopSkinKey, 0);
             ShowSpaceshipInfo(_currentSelectionIndex);
         }
 

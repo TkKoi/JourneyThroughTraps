@@ -1,16 +1,18 @@
 using UnityEngine;
 
-namespace TombOfTheMaskClone
+namespace JourneyThroughTraps
 {
     public class UIInit : MonoBehaviour
     {
         [SerializeField] UIPause uIPause;
-        [SerializeField] UIWin uIWin;
+        [SerializeField] UIWin uIWinWithCoin;
+        [SerializeField] UIWin uIWinWithoutCoin;
         [SerializeField] UILose uILose;
         private void Awake()
         {
             uIPause.Init();
-            uIWin.Init();
+            uIWinWithCoin.Init();
+            uIWinWithoutCoin.Init();
             uILose.Init();
         }
     }

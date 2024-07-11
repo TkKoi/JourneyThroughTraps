@@ -1,13 +1,16 @@
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace TombOfTheMaskClone
+namespace JourneyThroughTraps
 {
     public class UIShopBuy : MonoBehaviour
     {
+        private const string shopMenuKey = "ShopSelection";
+        private const string shopSkinKey = "SelectedSkinIndex";
+
+
         private UIShopData _uiHangarData; // Reference to the shop data
         private int[] _secondaryIntArray; // Array to store whether each skin is bought or not
         [SerializeField]
@@ -43,13 +46,13 @@ namespace TombOfTheMaskClone
             // Load saved data for bought skin
             for (int i = 0; i < _secondaryIntArray.Length; i++)
             {
-                int savedValue = PlayerPrefs.GetInt("HangarSelection" + i, 0);
+                int savedValue = PlayerPrefs.GetInt(shopMenuKey + i, 0);
                 _secondaryIntArray[i] = savedValue;
             }
 
             // Ensure the first item is always unlocked
             _secondaryIntArray[0] = 1;
-            PlayerPrefs.SetInt("HangarSelection" + 0, 1);
+            PlayerPrefs.SetInt(shopMenuKey + 0, 1);
             PlayerPrefs.Save();
 
             UpdatePriceText(); // Update price text on initialization
@@ -67,7 +70,7 @@ namespace TombOfTheMaskClone
             {
                 CoinSystem.TakeCoins(currentPrice); // Deduct coins for the purchase
                 _secondaryIntArray[currentIndex] = 1; // Mark the ship as bought
-                PlayerPrefs.SetInt("HangarSelection" + currentIndex, 1); // Save the purchase state
+                PlayerPrefs.SetInt(shopMenuKey + currentIndex, 1); // Save the purchase state
                 PlayerPrefs.Save();
                 UpdatePriceText(); // Update UI state after purchase
             }
@@ -100,7 +103,7 @@ namespace TombOfTheMaskClone
             if (_secondaryIntArray[currentIndex] == 1)
             {
                 // Save the selected ship index
-                PlayerPrefs.SetInt("SelectedShipIndex", currentIndex);
+                PlayerPrefs.SetInt(shopSkinKey, currentIndex);
                 PlayerPrefs.Save();
 
                 Debug.Log("Ship selected and saved.");
@@ -143,7 +146,7 @@ namespace TombOfTheMaskClone
         // Update the selected character indicator based on the selected ship
         private void UpdateSelectedCharacterIndicator()
         {
-            int selectedShipIndex = PlayerPrefs.GetInt("SelectedShipIndex", 0);
+            int selectedShipIndex = PlayerPrefs.GetInt(shopSkinKey, 0);
             int currentIndex = _uiHangarData.GetCurrentSelectionIndex();
 
             // Enable or disable the selected character indicator based on the current selection

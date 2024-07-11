@@ -2,7 +2,7 @@ using StarsSystem;
 using UnityEngine;
 using TMPro;
 
-namespace TombOfTheMaskClone
+namespace JourneyThroughTraps
 {
     public class UnlockObject : MonoBehaviour
     {

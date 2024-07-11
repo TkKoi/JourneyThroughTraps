@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace TombOfTheMaskClone
+namespace JourneyThroughTraps
 {
     [CreateAssetMenu(fileName = "New Shop Data", menuName = "Shop/Data")]
     public class ShopData : ScriptableObject

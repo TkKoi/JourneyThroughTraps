@@ -3,8 +3,7 @@ using OneP.InfinityScrollView;
 using TMPro;
 using StarsSystem;
 using UnityEngine.UI;
-using TombOfTheMaskClone;
-using Vampire;
+using JourneyThroughTraps;
 
 public class GridItem : InfinityBaseItem
 {

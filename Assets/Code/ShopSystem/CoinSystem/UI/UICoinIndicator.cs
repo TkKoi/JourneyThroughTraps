@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 
-namespace TombOfTheMaskClone
+namespace JourneyThroughTraps
 {
     public class UICoinIndicator : MonoBehaviour
     {

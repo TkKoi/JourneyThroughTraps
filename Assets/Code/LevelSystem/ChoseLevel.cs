@@ -1,7 +1,6 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-namespace TombOfTheMaskClone
+namespace JourneyThroughTraps
 {
     public class ChoseLevel : MonoBehaviour
     {

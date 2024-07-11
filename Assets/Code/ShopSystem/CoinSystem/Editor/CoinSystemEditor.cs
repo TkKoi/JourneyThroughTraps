@@ -1,15 +1,14 @@
 using UnityEngine;
 using UnityEditor;
 
-namespace TombOfTheMaskClone
+namespace JourneyThroughTraps
 {
     [CustomEditor(typeof(CoinSystem))]
     public class CoinSystemEditor : Editor
     {
         public override void OnInspectorGUI()
         {
-            DrawDefaultInspector(); // Відображення стандартних налаштувань
-            // Кнопка для додавання монет
+            DrawDefaultInspector();
             if (GUILayout.Button("Add 50 Coins"))
             {
                 CoinSystem.AddCoins(50);

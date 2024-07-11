@@ -1,34 +1,35 @@
 using UnityEngine;
 
-namespace TombOfTheMaskClone
+namespace JourneyThroughTraps
 {
     public class TrapBigSpike : MonoBehaviour
     {
         private const string ATTACK_ANIM = "Attack";
 
         [Header("Animation Settings")]
-        [SerializeField] private float triggerInterval = 2f; // Інтервал у секундах для включення анімації
-        [SerializeField] private Animator animator; // Компонент Animator
+        [SerializeField] private float triggerInterval = 2f; // Interval between spike attacks
+        [SerializeField] private Animator animator;
 
         private float timer;
 
-        // Start is called before the first frame update
+
         void Start()
         {
             timer = triggerInterval;
         }
 
-        // Update is called once per frame
+
         void Update()
         {
-            timer -= Time.deltaTime;
+            timer -= Time.deltaTime; // Decrease the timer
             if (timer <= 0f)
             {
-                TriggerAnimation();
-                timer = triggerInterval;
+                TriggerAnimation(); // Trigger the attack animation
+                timer = triggerInterval; // Reset the timer
             }
         }
 
+        // Trigger the attack animation
         private void TriggerAnimation()
         {
             if (animator != null)

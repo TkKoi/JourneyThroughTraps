@@ -2,13 +2,13 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using DG.Tweening;
 
-namespace TombOfTheMaskClone
+namespace JourneyThroughTraps
 {
-    public class UILose : DialogBox
+    public class UILose : UIDisplay
     {
         [SerializeField] CanvasGroup _background;
         [SerializeField] float _fadeTime;
-        [SerializeField] float _openDelay = 2f; // Задержка перед открытием
+        [SerializeField] float _openDelay = 2f;
 
         public void Init()
         {
@@ -18,11 +18,11 @@ namespace TombOfTheMaskClone
 
         public override void Open()
         {
-            DOVirtual.DelayedCall(_openDelay, () =>  // Задержка перед началом анимации
+            DOVirtual.DelayedCall(_openDelay, () =>
             {
                 _background.gameObject.SetActive(true);
                 _background.DOFade(0.5f, _fadeTime).SetUpdate(true);
-                Time.timeScale = 0; // Останавливаем игровое время
+                Time.timeScale = 0;
                 base.Open();
             }).SetUpdate(true);
         }
@@ -33,14 +33,14 @@ namespace TombOfTheMaskClone
             _background.DOFade(0f, _fadeTime).SetUpdate(true).OnComplete(() =>
             {
                 _background.gameObject.SetActive(false);
-                Time.timeScale = 1; // Восстанавливаем игровое время
+                Time.timeScale = 1;
             });
         }
 
         public void RestartLevel()
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-            Time.timeScale = 1; // Важно убедиться, что игровое время не остановлено после перезапуска
+            Time.timeScale = 1;
         }
     }
 }

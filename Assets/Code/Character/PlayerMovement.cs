@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace TombOfTheMaskClone
+namespace JourneyThroughTraps
 {
     public enum Direction
     {
@@ -9,16 +9,20 @@ namespace TombOfTheMaskClone
 
     public class PlayerMovement : MonoBehaviour
     {
-        [Tooltip("Скорость игрока")]
+        [Tooltip("Player's movement speed")]
         [SerializeField] private float speed;
-        [Tooltip("Позиция проверки земли")]
+        
+        [Tooltip("Position to check if player is grounded")]
         [SerializeField] private Transform groundCheck;
-        [Tooltip("Радиус проверки земли")]
+        
+        [Tooltip("Radius to check if player is grounded")]
         [SerializeField] private float checkRadius;
-        [Tooltip("Слой земли")]
+        
+        [Tooltip("Layer mask to identify ground")]
         [SerializeField] private LayerMask whatIsGround;
 
         private Rigidbody2D rb;
+        
         [SerializeField] private Direction movingDir = Direction.None;
         private Vector3 rotationVector = Vector3.zero;
         private bool isGrounded;
@@ -66,7 +70,6 @@ namespace TombOfTheMaskClone
                     movingDir = Direction.Right;
                     rb.constraints = RigidbodyConstraints2D.FreezePositionY;
                 }
-
             }
 
             UpdateRotation();
@@ -94,9 +97,11 @@ namespace TombOfTheMaskClone
                     rb.velocity = Vector2.zero;
                     break;
             }
-
         }
 
+        /// <summary>
+        /// Handles swipe detection and sets the appropriate swipe flags based on the input.
+        /// </summary>
         private void SwipeMode()
         {
             swipedRight = false;
@@ -118,7 +123,6 @@ namespace TombOfTheMaskClone
                         return;
 
                     Vector2 endPos = new Vector2(t.position.x / (float)Screen.width, t.position.y / (float)Screen.width);
-
                     Vector2 swipe = new Vector2(endPos.x - startPos.x, endPos.y - startPos.y);
 
                     if (swipe.magnitude < MIN_SWIPE_DISTANCE) // Too short swipe
@@ -151,6 +155,9 @@ namespace TombOfTheMaskClone
             }
         }
 
+        /// <summary>
+        /// Updates the player's rotation based on the current movement direction.
+        /// </summary>
         private void UpdateRotation()
         {
             switch (movingDir)
@@ -173,6 +180,9 @@ namespace TombOfTheMaskClone
             transform.rotation = Quaternion.Euler(rotationVector);
         }
 
+        /// <summary>
+        /// Draws gizmos in the editor to visualize the ground check radius.
+        /// </summary>
         private void OnDrawGizmosSelected()
         {
             if (groundCheck != null)

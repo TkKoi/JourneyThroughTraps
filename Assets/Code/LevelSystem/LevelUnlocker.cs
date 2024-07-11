@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace TombOfTheMaskClone
+namespace JourneyThroughTraps
 {
     public class LevelUnlocker : MonoBehaviour
     {

@@ -1,13 +1,13 @@
 using UnityEngine;
 using DG.Tweening;
 
-namespace TombOfTheMaskClone
+namespace JourneyThroughTraps
 {
-    public class UIShop : DialogBox
+    public class UIShop : UIDisplay
     {
         [SerializeField] CanvasGroup _background;
         [SerializeField] float _fadeTime;
-        [SerializeField] DialogBox _menuPanel;
+        [SerializeField] UIDisplay _menuPanel;
         public void Start()
         {
             _background.alpha = 0;
@@ -29,7 +29,7 @@ namespace TombOfTheMaskClone
             {
                 _background.gameObject.SetActive(false);
                 Time.timeScale = 1;
-            }); // Fade до 0 за 0.5 секунды, игнорируя Time.timeScale, после чего выполнить закрытие
+            });
             _menuPanel.Open();
         }
     }

@@ -1,15 +1,15 @@
 using Lean.Pool;
 using UnityEngine;
 
-namespace TombOfTheMaskClone
+namespace JourneyThroughTraps
 {
     public class Bullet : MonoBehaviour
     {
         private Vector3 direction;
         private float speed;
-        [SerializeField] private LayerMask obstacleLayerMask; // LayerMask для визначення об'єктів зіткнення
+        [SerializeField] private LayerMask obstacleLayerMask;
 
-        // Update is called once per frame
+
         void Update()
         {
             transform.position += direction * speed * Time.deltaTime;

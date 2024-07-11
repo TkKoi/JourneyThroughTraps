@@ -1,26 +1,26 @@
 using UnityEngine;
 
-namespace TombOfTheMaskClone
+namespace JourneyThroughTraps
 {
     public class TrapTriggerSpike : MonoBehaviour
     {
         private const string ATTACK_ANIM = "Attack";
         [SerializeField] private Animator targetAnimator;
-        [SerializeField] private float delayBeforeAttack = 1.5f; // Затримка перед початком анімації
+        [SerializeField] private float delayBeforeAttack = 1.5f; // Delay before the spike attacks
 
-        private bool isCooldown = false; // Флаг для перевірки часу затримки
-        private float cooldownTimer = 0f; // Таймер для відліку часу затримки
+        private bool isCooldown = false;
+        private float cooldownTimer = 0f;
 
         void Update()
         {
             if (isCooldown)
             {
-                cooldownTimer += Time.deltaTime;
+                cooldownTimer += Time.deltaTime; // Increase the cooldown timer
                 if (cooldownTimer >= delayBeforeAttack)
                 {
                     isCooldown = false;
                     cooldownTimer = 0f;
-                    StartAttackAnimation();
+                    StartAttackAnimation(); // Start the attack animation after the delay
                 }
             }
         }
@@ -33,6 +33,7 @@ namespace TombOfTheMaskClone
             }
         }
 
+        // Start the attack animation
         private void StartAttackAnimation()
         {
             if (targetAnimator != null)

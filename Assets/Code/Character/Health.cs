@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace TombOfTheMaskClone
+namespace JourneyThroughTraps
 {
     public class Health : MonoBehaviour
     {

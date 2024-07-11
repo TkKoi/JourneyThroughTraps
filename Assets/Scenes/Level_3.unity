@@ -4967,7 +4967,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1655715749}
+  - {fileID: 1617826983}
   - {fileID: 1923362998}
   - {fileID: 974758874}
   m_Father: {fileID: 0}
@@ -5045,6 +5045,52 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c6c6bf24a41e60499669452f53132c3, type: 3}
+--- !u!1 &1074815627
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1074815628}
+  - component: {fileID: 1074815629}
+  m_Layer: 0
+  m_Name: StarsSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1074815628
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1074815627}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1617826983}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1074815629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1074815627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14a1554b20e643e469937785c3d6d16b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 3
+  biome: 0
 --- !u!1 &1093241661
 GameObject:
   m_ObjectHideFlags: 0
@@ -5184,7 +5230,7 @@ PrefabInstance:
     - target: {fileID: 549941030475164553, guid: 2b772b8aaf4e83d4197340d9c368e8b0, type: 3}
       propertyPath: saveStars
       value: 
-      objectReference: {fileID: 1655715748}
+      objectReference: {fileID: 1074815629}
     - target: {fileID: 689768196351757003, guid: 2b772b8aaf4e83d4197340d9c368e8b0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -5264,7 +5310,7 @@ PrefabInstance:
     - target: {fileID: 6571561791724849381, guid: 2b772b8aaf4e83d4197340d9c368e8b0, type: 3}
       propertyPath: saveStars
       value: 
-      objectReference: {fileID: 1655715748}
+      objectReference: {fileID: 1074815629}
     - target: {fileID: 6912677580824644305, guid: 2b772b8aaf4e83d4197340d9c368e8b0, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -8004,7 +8050,6 @@ GameObject:
   - component: {fileID: 1296482662}
   - component: {fileID: 1296482665}
   - component: {fileID: 1296482664}
-  - component: {fileID: 1296482663}
   m_Layer: 0
   m_Name: FinishObject
   m_TagString: Untagged
@@ -8028,19 +8073,6 @@ Transform:
   - {fileID: 1392761822}
   m_Father: {fileID: 15682605}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1296482663
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1296482661}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05a6820387f3c2441914c5a694c4737c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  levelIndex: 3
 --- !u!114 &1296482664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8053,10 +8085,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98aed29ecd6f33440b6abd9b3b7c670c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelUnlocker: {fileID: 1296482663}
+  levelUnlocker: {fileID: 1617826984}
   uIWinWithCoins: {fileID: 1122800074}
   uIWinWithoutCoins: {fileID: 1122800072}
-  starSystem: {fileID: 1655715748}
+  starSystem: {fileID: 1074815629}
   addCoinText: {fileID: 1122800070}
   AddCoinsCount: 25
   timeAfterUIOpen: 0.1
@@ -8356,7 +8388,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uIPause: {fileID: 1878300935}
-  uIWin: {fileID: 1122800074}
+  uIWinWithCoin: {fileID: 1122800074}
+  uIWinWithoutCoin: {fileID: 1122800072}
   uILose: {fileID: 1256767125}
 --- !u!1001 &1615296624
 PrefabInstance:
@@ -8443,7 +8476,7 @@ MonoBehaviour:
   shakeDuration: 0.2
   shakeAngle: 10
   interval: 2
---- !u!1 &1655715747
+--- !u!1 &1617826982
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8451,44 +8484,44 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1655715749}
-  - component: {fileID: 1655715748}
+  - component: {fileID: 1617826983}
+  - component: {fileID: 1617826984}
   m_Layer: 0
-  m_Name: StarsSystem
+  m_Name: LevelUnlocker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1655715748
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1655715747}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14a1554b20e643e469937785c3d6d16b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  level: 3
-  biome: 0
---- !u!4 &1655715749
+--- !u!4 &1617826983
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1655715747}
+  m_GameObject: {fileID: 1617826982}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1074815628}
   m_Father: {fileID: 1021442428}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1617826984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1617826982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05a6820387f3c2441914c5a694c4737c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelIndex: 3
 --- !u!1 &1843135386
 GameObject:
   m_ObjectHideFlags: 0
